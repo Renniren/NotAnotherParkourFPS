@@ -354,11 +354,11 @@ MonoBehaviour:
   Team: 0
   Health: 100
   Shields: 0
-  MaximumHealth: 100
+  MaximumHealth: 65
   MaximumExtraShields: 100
   Armor: 0
   DamageThreshold: 0
-  MinimumRecievedDamage: 1
+  MinimumRecievedDamage: 3
   Invulnerable: 0
   Dead: 0
   Robotic: 0

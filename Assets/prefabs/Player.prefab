@@ -1832,7 +1832,7 @@ MonoBehaviour:
   MagazineSize: 31
   MaximumReserveAmmo: 256
   ArmorPiercingAmount: 0
-  Damage: 27
+  Damage: 7
   BulletForce: 3
   BulletPrefab: 
   BulletMass: 10
@@ -1991,7 +1991,7 @@ MonoBehaviour:
   MagazineSize: 11
   MaximumReserveAmmo: 256
   ArmorPiercingAmount: 0
-  Damage: 19
+  Damage: 22
   BulletForce: 3
   BulletPrefab: 
   BulletMass: 10
@@ -2112,7 +2112,7 @@ MonoBehaviour:
   MagazineSize: 8
   MaximumReserveAmmo: 256
   ArmorPiercingAmount: 0
-  Damage: 21
+  Damage: 44
   BulletForce: 18
   BulletPrefab: 
   BulletMass: 10
