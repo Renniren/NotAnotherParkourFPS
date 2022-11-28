@@ -359,9 +359,14 @@ namespace ParkourFPS
 		public GameObject Asset;
 	}
 
-	/// <summary>
-	/// Describes an Object Pool.
-	/// </summary>
+	public struct ObjectiveDescriptor
+    {
+		
+    }
+
+    /// <summary>
+    /// Describes an Object Pool.
+    /// </summary>
     [Serializable]
 	public struct Pool
 	{
@@ -758,7 +763,10 @@ namespace ParkourFPS
 			}
 		}
 	}
-
+	/// <summary>
+	/// Bulk class that contains all Events that are used in the game. It's good practice to keep new Events in this class to make sure
+	/// there is only one place to look for all important events.
+	/// </summary>
 	public static class Events
 	{
 		public delegate void beforeEntityTakeDamage(Entity ent, ref int amt, GameObject from);
@@ -772,8 +780,6 @@ namespace ParkourFPS
 		public delegate void attemptedToDamageObject(GameObject victim, ref int amt, GameObject from);
 		public static event attemptedToDamageObject OnDamageAttempted;
 		public static void OnDamageAttemptedInvoke(GameObject victim, ref int amt, GameObject from) { OnDamageAttempted?.Invoke(victim, ref amt, from); }
-
-
 
 		public delegate void entityDied(Entity ent);
 		public static event entityDied OnEntityKilled;
@@ -803,11 +809,25 @@ namespace ParkourFPS
 		public static event onWeaponChanged OnWeaponChanged;
 		public static void InvokeWeaponChanged() { OnWeaponChanged?.Invoke(); }
 
+		public delegate void onWeaponFire(BallisticWeapon weapon);
+		public static event onWeaponFire OnWeaponFired;
+		public static void InvokeWeaponFired(BallisticWeapon weapon) { OnWeaponFired?.Invoke(weapon); }
+
+		public delegate void onObjectiveActivate(Objective obj);
+		public static event onObjectiveActivate OnObjectiveActivated;
+		public static void InvokeObjectiveActivated(Objective obj) { OnObjectiveActivated?.Invoke(obj); }
+
+		public delegate void onObjectiveDeactivate(Objective obj);
+		public static event onObjectiveDeactivate OnObjectiveDeactivated;
+		public static void InvokeObjectiveDeactivated(Objective obj) { OnObjectiveDeactivated?.Invoke(obj); }
+
+		public delegate void onObjectiveCompleted(Objective obj);
+		public static event onObjectiveCompleted OnObjectiveCompleted;
+		public static void InvokeObjectiveCompleted(Objective obj) { OnObjectiveCompleted?.Invoke(obj); }
+
 		public delegate void onWeaponSwappedTo(BaseWeapon to);
 		public static event onWeaponSwappedTo OnWeaponSwapped;
 		public static void InvokeOnWeaponSwapped(BaseWeapon to) { OnWeaponSwapped?.Invoke(to); }
-
-
 
 		public delegate void hotswitchBegin(Vector3 where, GameObject target);
 		public static event hotswitchBegin OnHotswitchStart;
@@ -833,36 +853,9 @@ namespace ParkourFPS
 		public static event defenseBroken OnDefenseBroken;
 		public static void InvokeDefenseBroken(GameObject target) { OnDefenseBroken?.Invoke(target); }
 
-
-
 		public delegate void defenseBreakEnd(GameObject target, bool success);
 		public static event defenseBreakEnd OnDefenseBreakEnd;
 		public static void InvokeDefenseBreakEnd(GameObject target, bool success) { OnDefenseBreakEnd?.Invoke(target, success); }
-	}
-
-	public static class Externals
-	{
-		/*[DllImport("user32.dll", SetLastError = true)]
-		[return: MarshalAs(UnmanagedType.Bool)]
-		static extern bool SystemParametersInfo(SPI uiAction, uint uiParam, ref T pvParam, SPIF fWinIni); // T = any type
-
-		[DllImport("user32.dll", SetLastError = true)]
-		[return: MarshalAs(UnmanagedType.Bool)]
-		static extern bool SystemParametersInfo(SPI uiAction, uint uiParam, IntPtr pvParam, SPIF fWinIni);
-
-		// For setting a string parameter
-		[DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-		[return: MarshalAs(UnmanagedType.Bool)]
-		static extern bool SystemParametersInfo(uint uiAction, uint uiParam, String pvParam, SPIF fWinIni);
-
-		// For reading a string parameter
-		[DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-		[return: MarshalAs(UnmanagedType.Bool)]
-		static extern bool SystemParametersInfo(uint uiAction, uint uiParam, StringBuilder pvParam, SPIF fWinIni);
-
-		[DllImport("user32.dll", SetLastError = true)]
-		[return: MarshalAs(UnmanagedType.Bool)]
-		static extern bool SystemParametersInfo(SPI uiAction, uint uiParam, ref ANIMATIONINFO pvParam, SPIF fWinIni);*/
 	}
 
 	public static class Extensions

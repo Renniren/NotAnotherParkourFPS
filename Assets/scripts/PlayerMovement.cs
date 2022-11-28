@@ -450,6 +450,8 @@ public class PlayerMovement : MonoBehaviour
             c += Time.deltaTime;
             CurrentJumps = Mathf.Clamp(CurrentJumps, 0, Jumps);
 
+            DeadCollider.enabled = false;
+
             if (DoingNormalAirMovement)
             {
                 //asf_v3 = ((transform.right) * AirstrafeMultiplier * Mathf.Abs(mouse.x + body.velocity.z / 10) * MovePure.x) * Mathf.Abs(MovePure.z);
@@ -501,6 +503,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             body.freezeRotation = false;
+            DeadCollider.enabled = true;
         }
     }
 

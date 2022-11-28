@@ -68,6 +68,8 @@
     <Compile Include="Assets\Destructable.cs" />
     <Compile Include="Assets\HealthValueDisplay.cs" />
     <Compile Include="Assets\Hitmarker.cs" />
+    <Compile Include="Assets\Objective.cs" />
+    <Compile Include="Assets\PlayerSpeedometer.cs" />
     <Compile Include="Assets\ProbeDebugBox.cs" />
     <Compile Include="Assets\RandomizeRotation.cs" />
     <Compile Include="Assets\ViewRoll.cs" />
@@ -83,6 +85,8 @@
     <Compile Include="Assets\scripts\BloodManager.cs" />
     <Compile Include="Assets\scripts\Bloodsplatter.cs" />
     <Compile Include="Assets\scripts\BoostPad.cs" />
+    <Compile Include="Assets\scripts\BossEnemy.cs" />
+    <Compile Include="Assets\scripts\BossHealthBar.cs" />
     <Compile Include="Assets\scripts\Bullet.cs" />
     <Compile Include="Assets\scripts\BulletTracer.cs" />
     <Compile Include="Assets\scripts\BulletTracerCreator.cs" />
@@ -92,12 +96,17 @@
     <Compile Include="Assets\scripts\CameraRecoil.cs" />
     <Compile Include="Assets\scripts\CameraRoll.cs" />
     <Compile Include="Assets\scripts\DOFEffect.cs" />
+    <Compile Include="Assets\scripts\ElementFlasher.cs" />
     <Compile Include="Assets\scripts\Enemy.cs" />
     <Compile Include="Assets\scripts\EnemyController.cs" />
     <Compile Include="Assets\scripts\Entity.cs" />
     <Compile Include="Assets\scripts\ExplosiveProjectile.cs" />
     <Compile Include="Assets\scripts\FOVManager.cs" />
     <Compile Include="Assets\scripts\GameManager.cs" />
+    <Compile Include="Assets\scripts\HUDHurtEffect.cs" />
+    <Compile Include="Assets\scripts\HUDManager.cs" />
+    <Compile Include="Assets\scripts\HUDNotification.cs" />
+    <Compile Include="Assets\scripts\HUDSubtitles.cs" />
     <Compile Include="Assets\scripts\HelperHitbox.cs" />
     <Compile Include="Assets\scripts\Hitbox.cs" />
     <Compile Include="Assets\scripts\InfoBar.cs" />
@@ -107,6 +116,7 @@
     <Compile Include="Assets\scripts\MeleeManager.cs" />
     <Compile Include="Assets\scripts\MeleeWeapon.cs" />
     <Compile Include="Assets\scripts\NPC.cs" />
+    <Compile Include="Assets\scripts\ObjectiveDisplay.cs" />
     <Compile Include="Assets\scripts\ParkourFPS.cs" />
     <Compile Include="Assets\scripts\PlayerCamera.cs" />
     <Compile Include="Assets\scripts\PlayerLedgegrab.cs" />
@@ -127,6 +137,7 @@
     <Compile Include="Assets\scripts\Speedometer.cs" />
     <Compile Include="Assets\scripts\TimeManager.cs" />
     <Compile Include="Assets\scripts\Transporter.cs" />
+    <Compile Include="Assets\scripts\TriggerArea.cs" />
     <Compile Include="Assets\scripts\UIElementPulse.cs" />
     <Compile Include="Assets\scripts\ViewShake.cs" />
     <Compile Include="Assets\scripts\ViewmodelFollow.cs" />

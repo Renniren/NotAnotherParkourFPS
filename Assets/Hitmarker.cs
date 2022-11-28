@@ -7,6 +7,7 @@ using ParkourFPS;
 public class Hitmarker : MonoBehaviour
 {
     public float ShakeAmount = 4;
+    public float RShakeAmount = 4;
     public UIElementPulse pulse;
     public ViewShake ElementShake;
     public Sprite WeakDamage, NormalDamage, HeavyDamage;
@@ -48,6 +49,7 @@ public class Hitmarker : MonoBehaviour
 
             s = 0;
             ElementShake.DoShake(ShakeAmount);
+            ElementShake.DoRotationalShake(RShakeAmount);
             pulse.Show();
         }
     }

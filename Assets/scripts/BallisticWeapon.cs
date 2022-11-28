@@ -299,6 +299,7 @@ public class BallisticWeapon : BaseWeapon
 
 		PlaySound(FireSound, transform.position, true, FireSoundVolume);
 		CurrentAmmo -= AmmoPerShot;
+		Events.InvokeWeaponFired(this);
 	}
 
 	bool reloadBuffered;

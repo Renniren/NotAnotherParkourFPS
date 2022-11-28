@@ -31,7 +31,7 @@ public class WeaponPickup : MonoBehaviorExtended
             pickupActive = true;
         }
     }
-
+    int dmg = 155;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.IsPlayer() && pickupActive)
@@ -49,11 +49,13 @@ public class WeaponPickup : MonoBehaviorExtended
                     if (collision.gameObject.IsEnemy())
                     {
                         if(rend)rend.emitting = true;
-                        if(WouldKill(60, collision.gameObject))TimeManager.Instance.DramaticHit(0.34f);
+                        //if(WouldKill(dmg, collision.gameObject))TimeManager.Instance.DramaticHit(0.34f);
                         CameraShake.DoShake(0.9f);
-                        Entity.Hurt(Player, collision.gameObject, 60, true, true);
+                        Entity.Hurt(Player, collision.gameObject, dmg, true, true);
                         Spawn("BulletSparks", collision.GetContact(0).point);
                         PlaySound("crit1", transform.position);
+                        gameObject.GetRigidbody().RandomizeAngularVelocity(70);
+                        gameObject.GetRigidbody().velocity = Vector3.up * 10;
                         hitSomething = true;
                     }
                 }
